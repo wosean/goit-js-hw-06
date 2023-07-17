@@ -16,7 +16,13 @@ const images = [
 const imgGallery = document.querySelector('.gallery');
 
 const galleryItems = ({ url, alt }) =>
-  `<li><img src='${url}' alt='${alt}' width=300 height=auto></li>`;
+  `<li><img src='${url}' alt='${alt}' width=300 height=206></li>`;
 const galleryMarkup = images.reduce((acc, item) => acc + galleryItems(item), []);
 
 imgGallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+  
+imgGallery.style.display = 'flex';
+imgGallery.style.flexWrap = 'column-reverse'
+imgGallery.style.listStyle = 'none'
+imgGallery.style.gap = '20px'
+imgGallery.style.justifyContent = 'center'
